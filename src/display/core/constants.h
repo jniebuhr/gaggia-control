@@ -14,6 +14,7 @@
 #define DEFAULT_TEMPERATURE_OFFSET 0
 #define DEFAULT_PID "2.4,40,10"
 #define DEFAULT_MDNS_NAME "gaggimate"
+#define DEFAULT_OTA_CHANNEL "latest"
 
 #define MODE_STANDBY 0
 #define MODE_BREW 1

@@ -43,8 +43,7 @@ void HomekitAccessory::setTargetTemperature(float temperatureValue) const { targ
 float HomekitAccessory::getTargetTemperature() const { return targetTemperature->getVal(); }
 
 HomekitPlugin::HomekitPlugin(String wifiSsid, String wifiPassword)
-    : spanAccessory(nullptr), accessoryInformation(nullptr), identify(nullptr), accessory(nullptr),
-      controller(nullptr) {
+    : spanAccessory(nullptr), accessoryInformation(nullptr), identify(nullptr), accessory(nullptr), controller(nullptr) {
     this->wifiSsid = std::move(wifiSsid);
     this->wifiPassword = std::move(wifiPassword);
 }

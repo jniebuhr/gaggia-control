@@ -14,6 +14,7 @@ Settings::Settings() {
     wifiPassword = preferences.getString("wp", "");
     mdnsName = preferences.getString("mn", DEFAULT_MDNS_NAME);
     homekit = preferences.getBool("hk", false);
+    otaChannel = preferences.getString("oc", DEFAULT_OTA_CHANNEL);
     preferences.end();
 }
 
@@ -40,6 +41,7 @@ void Settings::save() {
     preferences.putString("wp", wifiPassword);
     preferences.putString("mn", mdnsName);
     preferences.putBool("hk", homekit);
+    preferences.putString("oc", otaChannel);
     preferences.end();
 }
 
@@ -100,5 +102,10 @@ void Settings::setMdnsName(const String &mdnsName) {
 
 void Settings::setHomekit(const bool homekit) {
     this->homekit = homekit;
+    save();
+}
+
+void Settings::setOTAChannel(const String &otaChannel) {
+    this->otaChannel = otaChannel;
     save();
 }

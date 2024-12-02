@@ -40,6 +40,12 @@ jobs:
           mv .pio/build/display/firmware.bin out/display-firmware.bin
           mv .pio/build/display/partitions.bin out/display-partitions.bin
           mv .pio/build/display/bootloader.bin out/display-bootloader.bin
+          mv .pio/build/display/littlefs.bin out/display-filesystem.bin
+      - name: Build display FS
+        run: pio run -t buildfs -e display
+      - name: Rename FS files
+        run: |
+          mv .pio/build/display/spiffs.bin out/display-filesystem.bin
       - name: Archive Firmware Files
         uses: actions/upload-artifact@v4
         with:

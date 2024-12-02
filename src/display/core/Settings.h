@@ -31,6 +31,7 @@ class Settings {
     String getWifiPassword() const { return wifiPassword; }
     String getMdnsName() const { return mdnsName; }
     bool isHomekit() const { return homekit; }
+    String getOTAChannel() const { return otaChannel; }
     void setTargetBrewTemp(int target_brew_temp);
     void setTargetSteamTemp(int target_steam_temp);
     void setTargetWaterTemp(int target_water_temp);
@@ -43,6 +44,7 @@ class Settings {
     void setWifiPassword(const String &wifiPassword);
     void setMdnsName(const String &mdnsName);
     void setHomekit(bool homekit);
+    void setOTAChannel(const String &otaChannel);
 
   private:
     Preferences preferences;
@@ -60,6 +62,8 @@ class Settings {
     String wifiPassword = "";
     String mdnsName = DEFAULT_MDNS_NAME;
     bool homekit = false;
+
+    String otaChannel = DEFAULT_OTA_CHANNEL;
 };
 
 #endif // SETTINGS_H
